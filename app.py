@@ -7,7 +7,8 @@ from youtube_transcript_api import YouTubeTranscriptApi
 load_dotenv()  # Load all the environment variables
 
 # Configure Google Gemini API key
-genai.configure(api_key="AIzaSyC3_Fb1Bd-WGenvT8BUMNuWQyByzR3-VjY")
+os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 prompt = """You are a YouTube video summarizer. You will be taking the transcript text
 and summarizing the entire video and providing the important summary in points
