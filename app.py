@@ -5,10 +5,10 @@ import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 
 load_dotenv()  # Load all the environment variables
-
+api_key = st.secrets["GOOGLE_API_KEY"]
 # Configure Google Gemini API key
-os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+api = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key = api_key)
 
 prompt = """You are a YouTube video summarizer. You will be taking the transcript text
 and summarizing the entire video and providing the important summary in points
